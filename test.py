@@ -47,10 +47,16 @@ if __name__ =='__main__':
     e = time.time()
     time_take = (e-s)
     perf =f"Instance name {config.get('instance_name' )}"+ "\n"+f"specs name {config.get('specs' )}" +"\n"+f"time taken  {time_take} "
+    path =''
     if not config['ispaperspace']:
         os.mkdir("demo-dataset")
+        path="demo-dataset/{config.get('instance_name' )}.txt"
+    else:
+        path="/datasets/demo-dataset/{config.get('instance_name' )}.txt"
+        
+     
     print(perf)
-    with open(f"demo-dataset/{config.get('instance_name' )}.txt" ,'w') as f:
+    with open(path ,'w') as f:
         f.write(perf)
 
     
