@@ -50,11 +50,9 @@ if __name__ =='__main__':
     path =''
     if not config['ispaperspace']:
         os.mkdir("demo-dataset")
-        path="demo-dataset/{config.get('instance_name' )}.txt"
+        path=f"demo-dataset/{config.get('instance_name' )}.txt"
     else:
-        path="/datasets/demo-dataset/{config.get('instance_name' )}.txt"
-        
-     
+        path=f"/storage/{config.get('instance_name' )}.txt"
     print(perf)
     with open(path ,'w') as f:
         f.write(perf)
