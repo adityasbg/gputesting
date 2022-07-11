@@ -13,8 +13,10 @@ config ={
 def get_model():
     model = keras.Sequential([
         keras.layers.Flatten(input_shape=(32,32,3)),
-        keras.layers.Dense(3000, activation='relu'),
-        keras.layers.Dense(1000, activation='relu'),
+        keras.layers.Dense(5000, activation='relu'),
+        keras.layers.Dense(4000, activation='relu'),
+        keras.layers.Dense(4000, activation='relu'),
+        keras.layers.Dense(2000, activation='relu'),
         keras.layers.Dense(10, activation='sigmoid')    
     ])
     model.compile(optimizer='adam',
